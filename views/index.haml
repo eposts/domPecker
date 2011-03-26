@@ -1,0 +1,33 @@
+!!!
+!!! XML
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %title The easiest way to search for domain names
+    %meta{'http-equiv'=>"Content-Type", :content=>"text/html; charset=iso-8859-1"}/
+    %meta{'http-equiv'=>"Content-Language", :content=>"en-us"}/
+    %link{:href=>"/stylesheets/screen.css", :media=>"screen", :rel=>"stylesheet", :type=>"text/css"}/
+  %body
+    .container
+      .header
+        %h1 DomainPecker - The easiest way to find domain names
+      .body
+        %center
+          %form(action='/similar' method='POST')
+            %label{:for => "searchwords"} Enter upto 3 words:
+            %input(type='text' name='searchwords' class='text') 
+            %input(type='submit' value="Go Peck") 
+
+          %br
+          %br
+          %table 
+            - @domains.each do |domain|
+              %tr
+                %td
+                %td
+                %td  #{domain}
+                %td  #{domain}
+                %td  #{domain}
+                %td  #{domain}
+                %td  #{domain}
+      .footer
